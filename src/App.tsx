@@ -1,10 +1,12 @@
-import React from "react";
 import "./App.css";
+import React from "react";
 
-let name = "Bernice";
-let age = 12;
-function App() {
-  return <div className="App">Hello TypeScript</div>;
-}
+const App: React.FC = () => {
+  return (
+    <div className="bg-red-500 p-6 w-screen h-full text-2xl text-center">
+      Typescript
+    </div>
+  );
+};
 
 export default App;
