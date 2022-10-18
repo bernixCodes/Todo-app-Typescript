@@ -3,13 +3,19 @@ import React from "react";
 interface Props {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
+  handleAdd: (e: React.FormEvent) => void;
 }
 
-const InputField = ({ todo, setTodo }: Props) => {
+const InputField = ({ todo, setTodo, handleAdd }: Props) => {
   return (
-    <form className="flex items-center justify-center p-4 my-6 bg-btnBgColor rounded-full">
+    <form
+      onSubmit={handleAdd}
+      className="flex items-center justify-center p-4 my-6 bg-btnBgColor rounded-full"
+    >
       <input
         type="text"
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
         placeholder="Enter Todo"
         className="outline-none px-6 w-full  bg-transparent caret-textColor placeholder:text-textColor text-headerColor"
       />
